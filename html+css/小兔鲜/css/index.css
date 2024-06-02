@@ -1,0 +1,343 @@
+.banner{
+    height: 500px;
+    background-color: #F5F5F5 ;
+}
+.banner .wrapper{
+    position: relative;
+    height: 500px;
+    background-color: bisque;
+    overflow: hidden;
+}
+.banner .pic{
+    display: flex;
+    /* flex布局，父级宽度不够，子级被挤小，不想挤小，增大父级尺寸 */
+    width: 3720px;
+}
+.banner .subnav{
+    position: absolute;
+    width: 250px;
+    height: 500px;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0,0.42);
+}
+.banner .subnav li{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 29px;
+    padding-right: 12px;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    cursor: pointer;
+}
+.banner .subnav li a{
+    margin-right: 5px;
+    font-size: 14px;
+    color: #fff;
+}
+.banner .subnav li .big{
+    margin-right: 14px;
+    font-size: 16px;
+}
+.banner .subnav li .iconfont{
+    font-size: 14px;
+}
+.banner .subnav li:hover{
+    background-color: #00BE9A;
+}
+.banner ol{
+    position: absolute;
+    right: 16px;
+    bottom: 17px;
+    display: flex;
+}
+.banner ol li{
+    margin-left: 8px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.banner ol i{
+    display: block;
+    margin: 4px 4px;
+    width: 14px;
+    height: 14px;
+    background-color: rgba(225, 225, 225,0.5);
+    border-radius: 50%;
+}
+.banner ol .active{
+    background-color: rgba(225, 225, 225,0.5);
+}
+.banner ol .active i{
+    background-color: #fff;
+}
+.tittle{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    height: 42px;
+}
+/* 标题-共同样式 */
+.tittle .left{
+    display: flex;
+}
+.tittle .left h3{
+    margin-right: 35px;
+    font-size: 30px;
+}
+.tittle .left p{
+    align-self: flex-end;
+    color: #A1A1A1;
+}
+.tittle .right .more{
+    line-height: 42px;
+    color: #A1A1A1;
+}
+.tittle .right span{
+    margin-left: 10px;
+}
+/* 内容-共同样式 */
+.bd ul{
+    display: flex;
+    justify-content: space-between;
+}
+.bd li{
+    width: 304px;
+    height: 404px;
+    background-color: #EEF9F4;
+}
+.bd li .pic{
+    width: 304px;
+    height: 304px;
+}
+.bd li .txt{
+    text-align: center;
+}
+.bd li h4{
+    margin-top: 17.5px;
+    margin-bottom: 8.5px;
+    font-size: 20px;
+}
+/* 新鲜好物 */
+.goods .bd p{
+    color: #AA2113;
+}
+.goods .bd span{
+    font-size: 22px;
+}
+/* 热门推荐 */
+.recommend .bd li{
+    background-color: #fff;
+}
+.recommend .bd p{
+    color: #A1A1A1;
+}
+/* 热门品牌 */
+.brand{
+    margin-top: 60px;
+    height: 468px;
+    background-color: #F5F5F5;
+}
+.brand .wrapper{
+    overflow: hidden;
+    height: 468px;
+}
+.brand .tittle{
+    position: relative;
+    margin-bottom: 40px;
+}
+.brand .button{
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: -25px;
+}
+.brand .button a{
+    margin-left: 12px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    color: #fff;
+}
+.brand .button .prev{
+    background-color: #ddd;
+}
+.brand .button .next{
+    background-color: #5EB69C;
+}
+.brand ul{
+    display: flex;
+    justify-content: space-between;
+}
+.brand li{
+    width: 244px;
+    height: 306px;
+}
+/* 生鲜 */
+.fresh .tittle{
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+.fresh .right{
+    display: flex;
+}
+.fresh .tittle ul{
+    margin-top: 9px;
+    margin-right: 58px;
+    display: flex;
+}
+.fresh .tittle li{
+    margin-left: 6px;
+    padding: 0 7px;
+    height: 22.5px;
+    line-height: 22.5px;
+}
+.fresh .active{
+    background-color: #00BE9A;
+}
+.fresh .active a{
+    color: #fff;
+}
+.fresh .content{
+    display: flex;
+    justify-content: space-between;
+}
+.fresh .content .left{
+    width: 248px;
+    height: 610px;
+}
+.fresh .content .right{
+    width: 968px;
+    height: 610px;
+}
+.fresh .content .right ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.fresh .content .right li{
+    position: relative;
+    /* 通过定位把cover区域隐藏在下面 */
+    overflow: hidden;
+    padding: 14.5px 26px 0;
+    width: 242px;
+    height: 305px;
+}
+.fresh .content .pic{
+    margin-bottom: 14.5px;
+    width: 200px;
+    height: 180px;
+}
+.fresh .content .info{
+    margin-bottom: 5px;
+    width: 200px;
+    height: 60px;
+    line-height: 19px;
+}
+.fresh .content .price{
+    color: #AA2113;
+}
+.fresh .content .price span{
+    font-size: 22px;
+}
+.fresh .content li .cover{
+    position: absolute;
+    left: 0px;
+    bottom: -86px;
+    padding-top: 15.5px;
+    height: 83.5px;
+    width: 242px;
+    background-color: #5EB69C;
+    text-align: center;
+    color: #fff;
+    /* 从隐藏的区域向上浮动，时间为0.5s */
+    transition: all 0.5s;
+}
+.fresh .content li .cover a{
+    color: #fff;
+}
+.fresh .content li .cover p:nth-child(1){
+    font-size: 18px;
+}
+.fresh .content li .cover p:nth-child(2){
+    margin: 3.5px auto 6px;
+    width: 120px;
+    height: 0.5px;
+    background-color: rgba(225, 225, 225,0.11);
+}
+.fresh .content li .cover p:nth-child(3){
+    font-size: 13px;
+}
+.fresh .content li .cover p:nth-child(3) .iconfont{
+    font-size: 13px;
+}
+.fresh .content li:hover .cover{
+    bottom: 0px;
+}
+.fresh .content li:hover{
+    border: #00BE9A 2px solid;
+}
+.topic{
+    margin-bottom: 40px;
+}
+.topic .tittle{
+    margin-top: 100px;
+}
+.topic ul{
+    display: flex;
+    justify-content: space-between;
+}
+.topic li{
+    width: 405px;
+    height: 355px;
+}
+.topic .topic-bd .pic{
+    position: relative;
+    width: 405px;
+    height: 288px;
+} 
+.topic .topic-bd .txt{
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 405px;
+    height: 67px;
+    color: #666;
+    font-size: 13px;
+}
+.topic .topic-bd .txt .left{
+    display: flex;
+}
+.topic .topic-bd .txt .left p{
+    margin-right: 20px;
+}
+.topic .topic-bd li:nth-child(1) .txt .left p:nth-child(1) i{
+    color: #AA2113;
+}
+.topic .topic-bd .cover{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 0 15px;
+    width: 405px;
+    height: 90px;
+    background-image: linear-gradient(180deg, rgba(137,137,137,0.00) 0%, rgba(0,0,0,0.90) 100%);
+    color: #fff;
+}
+.topic .topic-bd .cover h4{
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+.topic .topic-bd .cover .right{
+    color: #AA2113;
+}
+.topic .topic-bd .cover .right span{
+    font-size: 18px;
+}

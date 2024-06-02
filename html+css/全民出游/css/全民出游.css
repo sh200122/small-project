@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+}
+/* 默认状态html,body的高为0，需要更改*/
+body{
+    height: 100%;
+    background: url(../images/f1_1.jpg) no-repeat center 0 / cover;
+}
+/*云 */
+.cloud img{
+    position: absolute;
+    left:50%
+}
+.cloud img:nth-child(1){
+    margin-left: -250px;
+    top: 20px;
+    animation: cloud 1s infinite linear alternate;
+}
+.cloud img:nth-child(2){
+    margin-left: 200px;
+    top: 70px;
+    animation: cloud 1s infinite linear alternate  0.2s;
+}
+.cloud img:nth-child(3){
+    margin-left: -450px;
+    top: 150px;
+    animation: cloud 1s infinite linear alternate 0.5s;
+}
+@keyframes cloud {
+    100%{
+        transform: translateX(20px);
+    }  
+}
+/* 气球 */
+.balloon img{
+    position: absolute;
+    left: 50%;
+}
+.balloon img:nth-child(1){
+    margin-left: -480px;
+    top: 580px;
+    animation: balloon 1s infinite linear alternate;
+}
+.balloon img:nth-child(2){
+    margin-left: -210px;
+    top: 580px;
+    animation: balloon 1s infinite linear alternate 0.3s;
+}
+.balloon img:nth-child(3){
+    margin-left: 60px;
+    top: 580px;
+    animation: balloon 1s infinite linear alternate 0.5s;
+}
+.balloon img:nth-child(4){
+    margin-left: 330px;
+    top: 580px;
+    animation: balloon 1s infinite linear alternate 0.7s;
+}
+.balloon img:nth-child(5){
+    margin-left: -400px;
+    top: 300px;
+    animation: balloon 1s infinite linear alternate 0.7s;
+}
+@keyframes balloon {
+    100%{
+        transform: translateY(30px);
+    }
+}
+/* 文字 */
+.text img{
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    animation: text 1s;
+}
+@keyframes text {
+    0%{
+        transform: translate(-50%,-50%) scale(1);
+    }
+    20%{
+        transform: translate(-50%,-50%) scale(0.1);
+    }
+    40%{
+        transform: translate(-50%,-50%) scale(1.4);
+    }
+    70%{
+        transform: translate(-50%,-50%) scale(0.8);
+    }
+    100%{
+        transform: translate(-50%,-50%) scale(1);
+    }
+    
+}

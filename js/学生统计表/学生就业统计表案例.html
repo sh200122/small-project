@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>学生就业统计表</title>
+  <link rel="stylesheet" href="./iconfont/iconfont.css">
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+  <h1>学生就业统计表</h1>
+  <form class="info" autocomplete="off">
+    <input type="text" class="uname" name="uname" placeholder="姓名" />
+    <input type="text" class="age" name="age" placeholder="年龄" />
+    <input type="text" class="salary" name="salary" placeholder="薪资" />
+    <select name="gender" class="gender">
+      <option value="男">男</option>
+      <option value="女">女</option>
+    </select>
+    <select name="city" class="city">
+      <option value="北京">北京</option>
+      <option value="上海">上海</option>
+      <option value="广州">广州</option>
+      <option value="深圳">深圳</option>
+      <option value="曹县">曹县</option>
+    </select>
+    <button class="add">
+      <i class="iconfont icon-tianjia"></i>添加
+    </button>
+  </form>
+
+  <div class="title">共有数据<span>0</span>条</div>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>薪资</th>
+        <th>就业城市</th>
+        <th>录入时间</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- <tr>
+        <td>1</td>
+        <td>迪丽热巴</td>
+        <td>23</td>
+        <td>女</td>
+        <td>12000</td>
+        <td>北京</td>
+        <td>2099/9/9 08:08:08</td>
+        <td>
+          <a href="javascript:">
+            <i class="iconfont icon-shanchu"></i>
+            删除
+          </a>
+        </td>
+      </tr> -->
+    </tbody>
+  </table>
+  <script>
+    // 参考数据
+    const initData = [
+      {
+        stuId: 1,
+        uname: '迪丽热巴',
+        age: 22,
+        salary: '12000',
+        gender: '女',
+        city: '北京',
+        time: '2099/9/9 08:08:08'
+      }
+    ]
+    // 存参考数据
+    // localStorage.setItem('data', JSON.stringify(initData))
+    // 1. 渲染业务
+    // 1.1 先读取本地存储的数据
+    // (1). 本地存储有数据则记得转换为对象然后存储到变量里面，后期用于渲染页面
+    // (2). 如果没有数据，则用 空数组来代替
+    const arr = JSON.parse(localStorage.getItem('data')) || []
+    console.log(arr);
+    //使用map和join方法渲染页面
+    tbody = document.querySelector('tbody')
+    function render() {
+      const trArr = arr.map(function (ele, index) {
+        return `
+        <tr>
+        <td>${ele.stuId}</td>
+        <td>${ele.uname}</td>
+        <td>${ele.age}</td>
+        <td>${ele.gender}</td>
+        <td>${ele.salary}</td>
+        <td>${ele.city}</td>
+        <td>${ele.time}</td>
+        <td>
+          <a href="javascript:" data-id=${index}>
+            <i class="iconfont icon-shanchu"></i>
+            删除
+          </a>
+        </td>
+      </tr> 
+        `
+      })
+      console.log(trArr);
+      //(2).把数组转换为字符串
+      //(3).把生成的字符串追加给tbody
+      tbody.innerHTML = trArr.join('')
+      //显示共计有几条
+      document.querySelector('.title span').innerHTML = arr.length
+    }
+    render()
+
+    //2.新增业务
+    const info = document.querySelector('.info')
+    const uname = document.querySelector('.uname')
+    const age = document.querySelector('.age')
+    const salary = document.querySelector('.salary')
+    const gender = document.querySelector('.gender')
+    const city = document.querySelector('.city')
+    //注册点击事件，阻止默认行为
+    info.addEventListener('submit', function (e) {
+      e.preventDefault()
+      //非空判断
+      if (!uname.value || !age.value || !salary.value) {
+        //必须有return 不然会添加空内容
+        return alert('输入不能为空！')
+      }
+      //给arr数组追加对象，里面存储表单获取过来的数据
+      arr.push({
+        //使用 stuId: arr.length ? arr[arr.length - 1].stuId + 1 : 1 能够确保即使在进行删除操作后，每个新添加的学生都会获得一个唯一的 stuId。这种方法考虑到了数组长度变化的情况，保证了 stuId 的唯一性和连续性。如果你的系统中有删除操作，建议继续使用这种方法，而不是简单地使用 arr.length + 1。
+        stuId: arr.length ? arr[arr.length - 1].stuId + 1 : 1,
+        uname: uname.value,
+        age: age.value,
+        salary: salary.value,
+        gender: gender.value,
+        city: city.value,
+        time: new Date().toLocaleString()
+
+      })
+      //渲染页面
+      render()
+      //重置表单
+      this.reset()
+      //存入本地
+      localStorage.setItem('data', JSON.stringify(arr))
+    })
+    //3.删除业务
+    // 采用事件委托的形式，给tbody注册事件
+    tbody.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        //得到当前点击链接的索引号。渲染数据的时候，动态给a链接添加自定义属性data-id=''
+        console.log(e.target.dataset.id);
+        //提示用户是否要删除
+        if (confirm('你确定要删除吗?')) {
+          //通过splice删除数组里的某个数据
+          arr.splice(e.target.dataset.id, 1)
+          //重新渲染
+          render()
+          //把删除数据后的新数组存入本地
+          localStorage.setItem('data', JSON.stringify(arr))
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

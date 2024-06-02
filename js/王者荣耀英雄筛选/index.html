@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>英雄</title>
+  <link rel="stylesheet" href="./css/hero.css" />
+  <link rel="stylesheet" href="./css/comm-v1.css" />
+</head>
+
+<body>
+  <div class="herolist-box">
+    <div class="clearfix herolist-types">
+      <ul class="types-left">
+        <li>综合</li>
+        <li>定位</li>
+      </ul>
+      <ul class="clearfix types-ms">
+        <li data-ptype="10">
+          <span class="ms-radio"><i class="i"></i></span>
+          <label>本周免费</label>
+        </li>
+        <li data-ptype="11">
+          <span class="ms-radio"><i class="i"></i></span>
+          <label>新手推荐</label>
+        </li>
+      </ul>
+      <ul class="clearfix types-ms">
+        <li class="current" data-type="0">
+          <span class="ms-radio"><i class="i"></i></span>
+          <label>全部</label>
+        </li>
+        <li data-type="3">
+          <span class="ms-radio"><i class="i"></i></span>
+          <label>坦克</label>
+        </li>
+        <li data-type="1">
+          <span class="ms-radio"><i class="i"></i></span>
+          <label>战士</label>
+        </li>
+        <li data-type="4">
+          <span class="ms-radio"><i class="i"></i></span>
+          <label>刺客</label>
+        </li>
+        <li data-type="2">
+          <span class="ms-radio"><i class="i"></i></span>
+          <label>法师</label>
+        </li>
+        <li data-type="5">
+          <span class="ms-radio"><i class="i"></i></span>
+          <label>射手</label>
+        </li>
+        <li data-type="6">
+          <span class="ms-radio"><i class="i"></i></span>
+          <label>辅助</label>
+        </li>
+      </ul>
+    </div>
+    <div class="herolist-content">
+      <ul class="herolist clearfix">
+        <!-- <li >
+          <a href="#" target="_blank"><img src="" width="91" height="91" alt="曜" />曜</a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- 数组比较多，放在了外接的js文件中 -->
+  <script src="./hero.js"></script>
+  <script>
+    // 1. 渲染函数
+    function render(arr) {
+      const strArr = arr.map(({ icon, name }) => `
+    <li>
+      <a href="#" target="_blank"><img src="${icon}" width="91" height="91" alt="${name}" />${name}</a>
+    </li>
+  `);
+      document.querySelector('.herolist').innerHTML = strArr.join('');
+    }
+    render(heroArr); // 初始化渲染所有英雄
+
+    // 2. 点击进行筛选
+    document.querySelector('.herolist-types').addEventListener('click', function (event) {
+      let target = event.target;
+      while (target !== this) {
+        if (target.tagName === 'LI') {
+          this.querySelector('.current').classList.remove('current');
+          target.classList.add('current');
+
+          const type = target.dataset.type; // 获取选项的data-type值
+          let filteredArr;
+
+          if (type === '0') {
+            // 如果是“全部”选项，不筛选，返回所有英雄
+            filteredArr = heroArr;
+          } else {
+            // 根据选项筛选英雄
+            filteredArr = heroArr.filter(ele => ele.hero_type === +type || ele.pay_type === +target.dataset.ptype);
+          }
+
+          render(filteredArr);
+          return; // 处理完成后退出
+        }
+        target = target.parentNode;
+      }
+    });
+
+  </script>
+</body>
+
+</html>

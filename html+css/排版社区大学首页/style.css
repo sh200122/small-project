@@ -1,0 +1,150 @@
+/* General setup */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  min-width: 1000px;
+  max-width: 1400px;
+}
+
+/* Layout */
+
+section {
+  float: left;
+  width: 50%;
+}
+
+aside {
+  float: left;
+  width: 30%;
+}
+
+nav {
+  float: left;
+  width: 20%;
+}
+
+footer {
+  clear: both;
+}
+
+header,
+section,
+aside,
+nav,
+footer {
+  padding: 20px;
+}
+
+/* header and footer */
+
+header,
+footer {
+  border-top: 5px solid #a66;
+  border-bottom: 5px solid #a66;
+}
+
+/* WRITE YOUR CODE BELOW HERE */
+html {
+  font-size: 10px;
+}
+
+/* body字体 */
+body {
+  font-family: "Jersey 20";
+  font-size: 2rem;
+  line-height: 2rem;
+  letter-spacing: 0.1rem;
+}
+
+/* header字体 */
+h1,
+h2 {
+  font-family: "Tac One";
+  letter-spacing: 0.3rem;
+  word-spacing: .5rem;
+}
+
+/* 设置标题字体大小*/
+h1 {
+  font-size: 5rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+/* section文本缩进 */
+section {
+  text-indent: 2rem;
+}
+
+/* 链接样式 */
+a:link {
+  color: #a66;
+}
+
+a:visited {
+  color: #a66;
+}
+
+a:focus {
+  color: #a66;
+  text-decoration: none;
+  outline-color: transparent;
+}
+
+a:hover {
+  color: rgb(118, 61, 61);
+  text-decoration: none;
+}
+
+a:active {
+  background: #6900ff;
+  color: #cdfeaa;
+}
+
+/* 在外部链接右侧插入外部链接图标 */
+a[href^='http'] {
+  background: url('/images/icons8-external-link-52.png') no-repeat 100% 0;
+  background-size: 16px 16px;
+  padding-right: 19px;
+}
+
+/* 列表样式 */
+ul,
+ol {
+  line-height: 2rem;
+  list-style-type: none;
+}
+
+/* 列表符号 */
+section ol li,
+section ul li,
+aside ul li {
+  padding-left: 2rem;
+  background-image: url(/images/star.svg);
+  background-position: 0 0;
+  background-size: 1.6rem 1.6rem;
+  background-repeat: no-repeat;
+  text-indent: 0rem;
+}
+
+/* 导航栏菜单 */
+nav a {
+  text-decoration: none;
+}
+
+nav li {
+  margin-bottom: 2rem;
+  width: 13rem;
+  height: 5rem;
+  background-color: #dedede;
+  border: 1px solid #a66;
+  text-align: center;
+  line-height: 5rem;
+}

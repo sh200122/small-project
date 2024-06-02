@@ -1,0 +1,27 @@
+html {
+  font-family: sans-serif;
+}
+
+/* Your CSS below here */
+div {
+  width: 400px;
+  height: 300px;
+  text-align: center;
+  line-height: 300px;
+  font-size: 2em;
+  background-color: skyblue;
+  color: aliceblue;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  border: 1px solid #028eaa;
+  background-image: linear-gradient(to right bottom,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.2) 30%,
+      rgba(0, 0, 0, 0.3) 100%);
+  box-shadow:
+    5px 5px 10px rgba(0, 0, 0, 0.8),
+    /* 外部阴影 */
+    inset 5px 5px 10px rgba(255, 255, 255, 0.5),
+    /* 左上角的内嵌白色半透明阴影 */
+    inset -5px -5px 10px rgba(0, 0, 0, 0.5);
+}

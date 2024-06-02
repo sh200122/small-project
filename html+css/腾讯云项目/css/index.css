@@ -1,0 +1,153 @@
+.wrapper{
+    margin: 0 auto;
+    width: 1200px;
+  }
+  /* head区域*/
+  .head{
+    height: 40px;
+    background-color: #2b303b;
+  }
+  .head .cont{
+    display: flex;
+    justify-content: space-between;
+  }
+  .head img{
+    margin-top: 10px;
+    height: 20px;
+  }
+  .head .cont ul{
+    display: flex;
+  }  
+  .head .cont li{
+    margin-top: 10px;
+    padding: 0 10px;
+    height: 20px;
+    border-right: 1px #fff solid;
+  }
+  .head .cont .clear{
+    border-right: none;
+  }
+  .head .cont a{
+    font-size: 14px;
+    color: #fff;
+  }
+
+  /* banner区域 */
+  .banner{
+    height: 480px;
+    background-color: #181c28;
+  }
+  .banner .wrapper{
+    height: 480px;
+    background-image: url(../images/banner.png);
+  }
+  .banner .left{
+    width: 250px;
+    height: 480px;
+    background-color: #1b2a3f;
+  }
+  .banner .left ul{
+    padding-top: 52px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .banner .left a{
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 40px;
+    color: #fff;
+  }
+
+  /*  白色云从业者区域  */
+  .white{
+    height: 740px;
+  }
+  .white p{
+    display: block;
+    text-align: center;
+  }
+  .white .tittle{
+    margin-top: 45px;
+    margin-bottom: 26px;
+    font-size: 22px;
+  }
+  .white .text{
+    margin-bottom: 32px;
+  }
+  .white .body{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 50px;
+    height: 460px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  .white .body .tittle1{
+    margin-bottom: 10px;
+    width: 110px;
+    font-size: 26px;
+    border-bottom: 1px solid #ccc;
+  }
+  .white .body .text1{
+    line-height: 30px;
+  }
+  .white .body .block{
+    margin-top: 30px;
+    width: 162px;
+    height: 48px;
+    text-align: center;
+  }
+  .white .body .block a{
+    line-height: 46px;
+    font-size: 16px;
+  }
+  .white .body .right img{
+    margin-left: 76px;
+    width: 580px;
+    height: 347px;
+  }
+  
+  /* 底部区域 */
+  .foot{
+    height: 400px;
+    background-color: #2e3033;
+  }
+  .foot .wrapper{
+    display: flex;
+    justify-content: space-between;
+  }
+  .foot dl{
+    color: #fff;
+    margin-right: 100px;
+    margin-top: 33px;
+  }
+  .foot dt{
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  .foot dd{
+    font-size: 12px;
+    color: #ccc;
+  }
+  .foot .right{
+    margin-top: 33px;
+    width: 190px;
+    height: 130px;
+    color: #ccc;
+  }
+  .foot .right .buy{
+    margin-top: 14px;
+    height: 35px;
+    background-color: #00a4ff;
+    text-align: center;
+  }
+  .foot .right a{
+    font-size: 14px;
+    line-height: 35px;
+    color: #fff;
+  }
+  
+
+
+  

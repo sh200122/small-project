@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大理美食调查表</title>
+  <link rel="stylesheet" href="./style2.css">
+</head>
+
+<body>
+  <h1 id="title">大理美食调查表</h1>
+  <p id="description">感谢你对大理美食的分享！</p>
+  <form action="POST" id="survey-form">
+    <label for="name-label">名字 <input type="text" id="name-label" name="name" required placeholder="输入你呢名字"></label>
+    <label for="email-label">邮箱 <input type="email" id="email-label" name="email" required placeholder="输入你呢邮箱"></label>
+    <label for="number-label">岁数 <input type="number" name="number" id="number-label" max="120" min="13"
+        placeholder="你几岁喽"></label>
+
+    <label for="dropdown">你是哪跌呢
+      <select id="dropdown" name="dropdown">
+        <option value="">(大理本地)</option>
+        <option value="1">弥渡</option>
+        <option value="2">祥云</option>
+        <option value="3">巍山</option>
+        <option value="4">外地人</option>
+      </select>
+    </label>
+
+    <legend>给听得懂方言</legend>
+    <label for="yes"><input type="radio" name="choice" id="yes" value="yes" checked class="inline" /> 听得懂呢</label>
+    <label for="no"><input type="radio" name="choice" id="no" value="no" class="inline" /> 听不懂</label>
+    <label for="yes-no"><input type="radio" name="choice" id="yes-no" value="yes-no" class="inline" /> 半懂不懂</label>
+
+
+    <legend>选一个你最喜欢吃呢</legend>
+    <label for="foods"><input type="checkbox" value="erKuai" class="inline">烧饵块</label>
+    <label for="foods"><input type="checkbox" value="fish" class="inline">酸菜鱼</label>
+    <label for="foods"><input type="checkbox" value="soup" class="inline">菌子汤</label>
+    <label for="foods"><input type="checkbox" value="xiZhou" class="inline">喜洲粑粑</label>
+    <label for="foods"><input type="checkbox" value="juan" class="inline">卷粉</label>
+    <label for="foods"><input type="checkbox" value="milk" class="inline">乳扇</label>
+    <label for="foods"><input type="checkbox" value="douFen" class="inline">稀豆粉</label>
+
+    <textarea name="" id="" rows="5" cols="30" placeholder="欢迎补充"></textarea>
+    <label for="submit"><input type="submit" name="" id="submit"></label>
+  </form>
+</body>
+
+</html>
